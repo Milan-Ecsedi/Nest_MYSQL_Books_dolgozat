@@ -17,7 +17,7 @@ export class AppController {
 
   @Get("/")
   @Render('list')
-  async listPaintings() {
+  async listBooks() {
     const [rows] = await db.execute(
       'SELECT * FROM `books` WHERE 1 ORDER by rating DESC;'
     );
@@ -26,6 +26,8 @@ export class AppController {
       books: rows,
     };
   }
+
+  
 
 
   @Get('books/new')
@@ -38,7 +40,7 @@ export class AppController {
   @Redirect()
   async newBook(@Body() book: BookDto) {
     
-    const [result]: any = await db.execute(
+    const []: any = await db.execute(
       'INSERT INTO books (title, rating) VALUES (?, ?)',
       [book.title, book.rating],
     );
