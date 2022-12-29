@@ -26,6 +26,17 @@ export class AppController {
       books: rows,
     };
   }
+  @Get("/")
+  @Render('list')
+  async BookSerach(@Query('rating') rating=3) {
+    const [rows] = await db.execute(
+      'SELECT * FROM `books` WHERE rating= ? ORDER by rating DESC;'[rating]
+    );
+
+    return {
+      books: rows,
+    };
+  }
 
 
 

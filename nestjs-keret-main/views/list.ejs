@@ -10,7 +10,12 @@
     
 </head>
 <body style="background-color: gray;">
-    Search by rating: <input type="number"><br>
+    Search by rating:
+<form method="get">
+    <input type="number" name="rating">
+    <input type="submit" value="Search">
+</form>
+   
     
     <table style="border: 1px black solid;">
         <% for (let p of books) { %>
