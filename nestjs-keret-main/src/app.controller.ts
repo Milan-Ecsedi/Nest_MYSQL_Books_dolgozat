@@ -28,13 +28,14 @@ export class AppController {
   }
   @Get("/")
   @Render('list')
-  async BookSerach(@Query('rating') rating=3) {
+  async BookSearch(@Query('rating') rating: number) {
     const [rows] = await db.execute(
       'SELECT * FROM `books` WHERE rating= ? ORDER by rating DESC;'[rating]
     );
 
     return {
       books: rows,
+      
     };
   }
 

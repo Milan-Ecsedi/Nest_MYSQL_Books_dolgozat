@@ -11,9 +11,9 @@
 </head>
 <body style="background-color: gray;">
     Search by rating:
-<form method="get">
-    <input type="number" name="rating">
-    <input type="submit" value="Search">
+<form method="GET">
+    <input type="number" name="rating" min="1" max="5" style="border: 0px; background-color: rgba(255, 255, 255, 0.355); border-bottom: 1px black solid;">
+    <input type="submit" value="BookSearch">
 </form>
    
     
@@ -36,6 +36,6 @@
 
     </table>
         <br>
-        <a href="books/new">Add a new book</a>
+        <a href="books/new" style="text-decoration-line: none; color: black; background-color: rgba(84, 241, 155, 0.819);">Add a new book</a>
 </body>
 </html>
